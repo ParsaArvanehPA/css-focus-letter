@@ -1,0 +1,102 @@
+:root {
+    --background-color-primary: hsl(216, 28%, 7%);
+
+    --border-width: .5rem;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Nova Mono', monospace;
+    font-size: 62.5%;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    background: var(--background-color-primary);
+
+    overflow: hidden;
+}
+
+body > p {
+    height: fit-content;
+
+    font-size: 10rem;
+    font-weight: bold;
+
+    color: white;
+
+    padding-inline: .5ch;
+
+    filter: blur(.8rem);
+    transition: filter 300ms linear;
+
+    user-select: none;
+
+    position: relative;
+}
+
+body > p:hover {
+    filter: blur(0);
+
+    transition: unset;
+}
+
+body > p:hover > i {
+    position: absolute;
+    inset: 0;
+}
+
+body > p:hover > i::after,
+body > p:hover > i::before {
+    content: "";
+    position: absolute;
+
+    background-color: white;
+    border-radius: 99rem;
+}
+
+body > p:hover > i:nth-of-type(1)::after,
+body > p:hover > i:nth-of-type(1)::before {
+    top: 0;
+    left: 0;
+}
+
+body > p:hover > i:nth-of-type(2)::after,
+body > p:hover > i:nth-of-type(2)::before {
+    top: 0;
+    right: 0;
+}
+
+body > p:hover > i:nth-of-type(3)::after,
+body > p:hover > i:nth-of-type(3)::before {
+    bottom: 0;
+    right: 0;
+}
+
+body > p:hover > i:nth-of-type(4)::after,
+body > p:hover > i:nth-of-type(4)::before {
+    bottom: 0;
+    left: 0;
+}
+
+body > p:hover > i::after {
+    width: 30%;
+    height: .5rem;
+}
+
+body > p:hover > i::before {
+    width: .5rem;
+    height: 30%;
+}
